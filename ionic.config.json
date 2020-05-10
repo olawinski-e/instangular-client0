@@ -1,0 +1,7 @@
+{
+  "name": "instangular-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
