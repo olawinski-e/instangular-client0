@@ -1,0 +1,216 @@
+<main class="main">
+  <div class="main__padding">
+    <article class="main__padding__article">
+      <div class="part">
+        <div class="bg">
+          <div class="up">
+            <div class="up__logo"></div>
+          </div>
+          <div class="mid">
+            <form
+              class="mid__form"
+              [formGroup]="userForm"
+              (ngSubmit)="onSubmit()"
+              action="/signup"
+              method="POST"
+            >
+              <h2 class="mid__form__subscribe">
+                Inscrivez-vous pour voir les photos et vidéos de vos amis.
+              </h2>
+              <div class="btn-margin">
+                <button class="blue-btn" type="submit" disabled="">
+                  <span class="connection-icon"></span>
+                  Se connecter avec Facebook
+                </button>
+              </div>
+
+              <div class="ou-margin">
+                <div class="ou-margin__line"></div>
+                <div class="ou-margin__ou">ou</div>
+                <div class="ou-margin__line"></div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-input">
+                  <label for="inputEmail3">E-mail</label>
+                  <span>E-mail</span>
+                  <input
+                    class="form-control fo-input"
+                    type="text"
+                    formControlName="email"
+                    aria-label="Numéro de mobile ou e-mail"
+                    aria-required="true"
+                    autocapitalize="off"
+                    autocomplete="tel"
+                    autocorrect="off"
+                    name="emailOrPhone"
+                    type="text"
+                    value=""
+                  />
+
+                  <!-- error -->
+                  <!-- <div
+                    class="invalid-feedback"
+                    *ngIf="submitted && myForm.email.errors?.required"
+                  >
+                    Enter your email
+                  </div>
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="submitted && myForm.email.errors?.pattern"
+                  >
+                    Enter valid email
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-input">
+                  <label for="inputVerify3">Numéro de mobile</label>
+                  <span>Numéro de mobile</span>
+                  <input
+                    class="form-control fo-input"
+                    type="text"
+                    formControlName="phoneNumber"
+                  />
+
+                  <!-- error -->
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="submitted && myForm.phoneNumber.errors?.required"
+                  >
+                    Enter your phone number
+                  </div>
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="submitted && myForm.phoneNumber.errors?.pattern"
+                  >
+                    Enter Numbers Only
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-input">
+                  <label for="inputName">Nom complet</label>
+                  <span>Nom complet</span>
+                  <input
+                    class="form-control fo-input"
+                    type="text"
+                    formControlName="fullname"
+                  />
+                  <!-- error -->
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="submitted && myForm.fullname.errors?.required"
+                  >
+                    Name is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-input">
+                  <label for="inputUsername">Nom d'utilisateur</label>
+                  <span>Nom d'utilisateur</span>
+                  <input
+                    class="form-control fo-input"
+                    type="text"
+                    formControlName="username"
+                  />
+
+                  <!-- error -->
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="submitted && myForm.username.errors?.required"
+                  >
+                    Username is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-input">
+                  <label for="inputPassword">Mot de passe</label>
+                  <span>Mot de passe</span>
+                  <input
+                    class="form-control fo-input"
+                    type="password"
+                    formControlName="encryptedPassword"
+                    placeholder="*******"
+                  />
+
+                  <!-- error -->
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="
+                      submitted && myForm.encryptedPassword.errors?.required
+                    "
+                  >
+                    Password is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group btn-margin">
+                <button class="blue-btn" type="submit">
+                  Suivant
+                </button>
+              </div>
+
+              <p class="mid__form__p">
+                En vous inscrivant, vous acceptez nos
+                <a
+                  target="_blank"
+                  href="https://help.instagram.com/581066165581870"
+                  >Conditions générales</a
+                >. Découvrez comment nous recueillons, utilisons et partageons
+                vos données en lisant notre
+                <a
+                  target="_blank"
+                  href="https://help.instagram.com/519522125107875"
+                  >Politique d’utilisation des données</a
+                >
+                et comment nous utilisons les cookies et autres technologies
+                similaires en consultant notre
+                <a target="_blank" href="/legal/cookies/"
+                  >Politique d’utilisation des cookies</a
+                >.
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="bg">
+          <div class="middle">
+            <p class="middle__p">
+              Vous avez un compte&nbsp;?
+              <a href="/signin"
+                ><span class="middle__p__signup-link">Connectez-vous</span></a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="down">
+          <p class="down__p">Téléchargez l’application.</p>
+          <div class="down__download">
+            <a
+              class="mr"
+              href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8&amp;vt=lo"
+              ><img
+                alt="Disponible dans l’App Store"
+                class="Rt8TI"
+                src="./../../../../assets/images/appstore.png" /></a
+            ><a
+              class="mr"
+              href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D92015C90-0DCD-4571-B19A-CE3130CC677C%26utm_content%3Dlo%26utm_medium%3Dbadge"
+              ><img
+                alt="Disponible dans Google Play"
+                class="Rt8TI"
+                src="./../../../../assets/images/googleplay.png"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
