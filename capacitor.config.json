@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "instangular-client",
+  "appName": "instangular",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
