@@ -9,12 +9,12 @@ import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomePageComponent } from "./components/pages/home-page/home-page.component";
-import { SignupComponent } from "./components/auth/signup/signup.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { EmailComponent } from "./components/auth/email/email.component";
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, SignupComponent],
+  declarations: [AppComponent, HomePageComponent, EmailComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

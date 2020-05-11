@@ -1,0 +1,90 @@
+<section class="signup-email">
+  <div class="email-page">
+    <div class="register-header">
+      <a href="/" class="register-header__a">
+        <img
+          class="register-header__a__img"
+          src="./../../../../assets/images/backArrow.png"
+          alt="Arrow Go Back"
+        />
+      </a>
+      <p class="register-header__a__text-register">Register</p>
+    </div>
+
+    <div class="middle">
+      <div class="header-language">
+        <a class="dots"
+          ><img
+            class="dots__three"
+            src="./../../../../assets/images/threeDots.png"
+            alt="three dots"
+          />
+        </a>
+
+        <div class="title">
+          <p class="title__language">ENGLISH</p>
+          <div class="arrow">
+            <img
+              class="arrow__img"
+              src="./../../../../assets/images/downArrow.png"
+              alt="down arrow grey"
+            />
+          </div>
+        </div>
+      </div>
+
+      <form
+        class="form-email"
+        [formGroup]="profileForm"
+        (ngSubmit)="onSubmit()"
+        action="/signup"
+        method="POST"
+      >
+        <label for="inputEmail3" class="form-email__label">EMAIL</label>
+        <hr class="form-email__hr" />
+        <input
+          class="form-control form-email__input"
+          type="email"
+          formControlName="email"
+          placeholder="Email Address"
+          name="emailOrPhone"
+          type="text"
+          value=""
+        />
+        <div>
+          <p>Form Value: {{ profileForm.value | json }}</p>
+        </div>
+
+        <!-- <label class="form-email__label">EMAIL</label>
+        <hr class="form-email__hr" />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          class="form-email__input"
+          value=""
+          formControlName="email"
+          required
+        /> -->
+        <div class="form-email__generator">
+          <button href="#" class="form-email__generator__input">
+            @gmail.com</button
+          ><button href="#" class="form-email__generator__input">
+            @hotmail.com
+          </button>
+        </div>
+        <button class="blue-button large">Next</button>
+      </form>
+    </div>
+    <div class="footer">
+      <a href="https://www.facebook.com" class="footer__a">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Mzc4QTI4RDkzMkU1MTFFOUI4QUI5M0NBNjk5ODU2QTEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Mzc4QTI4REEzMkU1MTFFOUI4QUI5M0NBNjk5ODU2QTEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozNzhBMjhENzMyRTUxMUU5QjhBQjkzQ0E2OTk4NTZBMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozNzhBMjhEODMyRTUxMUU5QjhBQjkzQ0E2OTk4NTZBMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pi9O8dUAAAJiSURBVHja7FexThwxEPX6doGEECl0CCGEImr+IEpDQ5dQpOcPqIHvoOQfEJQRH5BEVBEfkCpKooAEC8fd2ry5e0Zzq+XQeQ1pMtKTvd6z3/N4ZrxnvPfbwJUfWuWf3gKHcG5n0jHGvJSRDGbSma8967UdYIFSBHg1kML6JO+Q1CtBNggJGxYBVSLysJHO2B+NetoFD7Q17cE/wGfgO3AJTANTwBLwAZgHqnuhCYNK7BBYe2DnEmff+LtumJAnDLRj4BO8e03CjLssONbI1VZAxTXE7XtCBOIZBqLDcx/PbtwCecvdh3M/Adkp+7fo35OqfrchNZMJ+Eq3d0BYsb+OZhN4DdxIrQFW6rx5otz/ybaQYwH5KtoDYPGRjGmV/75WfIyqAW8V+TXf92peixYQCo4bI0qO4VaJsqoytooBz0WymvhOrd5bFh+j2lAPjL5y8ghyx4ju88wLtVuvjkSqoKRkSR6ZOw3yEa9PUop7JDsDtoBfwBzd/QMLn2MpK2mH9hXGltXlcwG8B/aBF7oU5xFBJ9f3l5BuyrUZyaW95F2g3/8l+cjVHBOEovyNqu85d+5ZeAYXHlAAU6rcr6k0zGJjYHC+IPlNsrLmgXDbeh6ZtiWVIUWMgBDpCyDZQXsOzFLYEUjPZNdoe2jl/D8yA0peye8avT7h1eseGN/iWrNsNxonw+pjk8ZA+MTyqvoZlYY6YyrVH8xp+uaMCcLYD9fGebbFYvaR91lDP5mAps/uKEv1Kf5fQCsB7h/yOxFgE/05mSyCh5x2+AeRRfw5yVmUShGwG0Q803G4QC7cdwIMAHo0TeryMktBAAAAAElFTkSuQmCC"
+          alt="facebook logo"
+          class="footer__a__img"
+        />
+        Sign up with Facebook
+      </a>
+    </div>
+  </div>
+</section>

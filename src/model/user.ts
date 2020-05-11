@@ -1,11 +1,11 @@
 export class User {
-  fullname: string;
-  encryptedPassword: string;
   username: string;
-  website: string;
-  biography: string;
-  profilePic: string;
+  fullname: string;
   email: string;
+  encryptedPassword: string;
+  biography: string;
+  website: string;
+  profilePic: string;
   phoneNumber: number;
   gender: string;
 }
