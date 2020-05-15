@@ -11,7 +11,7 @@ import { ApiService } from "src/service/api.service";
 })
 export class EmailComponent implements OnInit {
   submitted = false;
-  userForm: FormGroup;
+  control: FormControl;
 
   profileForm = this.fb.group({
     email: [
@@ -28,7 +28,9 @@ export class EmailComponent implements OnInit {
     private router: Router,
     private ngZone: NgZone,
     private apiService: ApiService
-  ) {}
+  ) {
+    this.control = fb.control({ value: "email", disabled: true });
+  }
 
   ngOnInit(): void {}
 
@@ -39,7 +41,7 @@ export class EmailComponent implements OnInit {
     this.apiService.createUser(this.profileForm.value).subscribe(
       (res) => {
         console.log("User successfully created");
-        this.ngZone.run(() => this.router.navigateByUrl("/home-page"));
+        this.ngZone.run(() => this.router.navigateByUrl("/"));
       },
       (error) => {
         console.log(error);
