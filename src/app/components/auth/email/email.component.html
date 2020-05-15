@@ -39,6 +39,8 @@
         (ngSubmit)="onSubmit()"
         action="/signup"
         method="POST"
+        id="email"
+        name="email"
       >
         <label for="inputEmail3" class="form-email__label">EMAIL</label>
         <hr class="form-email__hr" />
@@ -50,22 +52,16 @@
           name="emailOrPhone"
           type="text"
           value=""
+          required
         />
         <div>
           <p>Form Value: {{ profileForm.value | json }}</p>
         </div>
 
-        <!-- <label class="form-email__label">EMAIL</label>
-        <hr class="form-email__hr" />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          class="form-email__input"
-          value=""
-          formControlName="email"
-          required
-        /> -->
+        <!-- <div *ngIf="profileForm.controls['email'].errors.required">
+          Name is required.
+        </div> -->
+
         <div class="form-email__generator">
           <button href="#" class="form-email__generator__input">
             @gmail.com</button

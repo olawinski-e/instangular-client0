@@ -1,6 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl } from "@angular/forms";
+import { Component, OnInit, NgZone } from "@angular/core";
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import { Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { ApiService } from "src/service/api.service";
 
 @Component({
   selector: "email",
@@ -8,6 +10,9 @@ import { Validators } from "@angular/forms";
   styleUrls: ["./email.component.scss"],
 })
 export class EmailComponent implements OnInit {
+  submitted = false;
+  userForm: FormGroup;
+
   profileForm = this.fb.group({
     email: [
       "",
@@ -17,16 +22,28 @@ export class EmailComponent implements OnInit {
       ],
     ],
   });
-  constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {}
+  constructor(
+    public fb: FormBuilder,
+    private router: Router,
+    private ngZone: NgZone,
+    private apiService: ApiService
+  ) {}
 
-  // Getter to access form control
-  get myForm() {
-    return this.profileForm.controls;
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     console.warn(this.profileForm.value);
+    this.submitted = true;
+
+    this.apiService.createUser(this.profileForm.value).subscribe(
+      (res) => {
+        console.log("User successfully created");
+        this.ngZone.run(() => this.router.navigateByUrl("/home-page"));
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

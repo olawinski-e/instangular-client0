@@ -12,18 +12,22 @@ import {
 })
 export class ApiService {
   baseUri: string = "http://localhost:4000/api";
-  headers = new HttpHeaders().set("Content-Type", "application/json");
+  headers = new HttpHeaders({
+    "Content-Type": "application/json; charset=utf-8",
+  });
 
   constructor(private http: HttpClient) {}
 
   // Create
   createUser(data): Observable<any> {
     let url = `${this.baseUri}/signup`;
+    console.log(this.http.post(url, data));
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
   // Get users
   getUsers() {
+    console.log("ok get users");
     return this.http.get(`${this.baseUri}`);
   }
 
