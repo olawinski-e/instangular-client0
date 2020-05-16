@@ -2,7 +2,7 @@ import { Component, OnInit, NgZone } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import { Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { ApiService } from "src/service/api.service";
+import { ApiService } from "src/services/api.service";
 
 @Component({
   selector: "email",
